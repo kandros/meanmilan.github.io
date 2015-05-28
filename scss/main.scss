@@ -1,0 +1,217 @@
+$white: #fff;
+$highlight: #d2674e;
+$dark: #22292e;
+
+@import 'normalize';
+@import 'animated-title';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+// Wrappers
+
+.wrapper_wide,
+.wrapper,
+.wrapper_skinny{
+	margin: 0 auto;
+}
+
+.wrapper_wide{
+	width: 90%;
+}
+
+.wrapper{
+	width: 80%;
+}
+
+.wrapper_skinny{
+	width: 60%;
+}
+
+//  Clearfix
+.pagination:before, .pagination:after,
+.cf:before, .cf:after{
+	content: " ";
+	display: table;
+}
+.pagination:after,
+.cf:after{
+	clear: both;
+}
+
+// Buttons
+
+.button{
+	color: $white;
+	text-decoration: none;
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	border-radius: 2rem;
+	outline: none;
+	border: none;
+	min-width: 8.5rem;
+}
+
+.button_highlight,
+.button_white{
+	transition: background 0.4s ease-in-out;
+	&:hover{
+		background: darken($highlight, 7.5%);
+	}
+}
+
+.button_highlight{
+	background: $highlight;
+}
+
+.button_white{
+	background: $white;
+	color: $dark;
+
+}
+
+// Main Header
+
+#main_header.scrolled{
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
+	opacity: 0.95;
+	padding: 5px;
+
+
+}
+
+#main_header{
+	position: fixed;
+	width: 100%;
+	z-index: 30;
+	color: $dark;
+	transition: all 0.6s ;
+	background: $white;
+	padding: 0.5rem 0 1rem;
+	#logo{
+		float: left;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $dark;
+		text-decoration: none;
+		img{
+			height: 50px;
+			&:hover{
+				opacity: .8;
+			}
+		}
+	}
+
+	nav{
+		padding-top: 1rem;
+		float: right;
+		ul{
+			list-style:none;
+			margin: 0;
+			li{
+				display: inline;
+				margin-left: 2.5rem;
+				a{
+					color: $dark;
+					text-decoration: none;
+					padding-left: 2rem;
+					&:hover{
+						color: $highlight;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Banner
+
+#banner{
+	background-image: url(../img/tram.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	background-attachment: fixed;
+	padding-top: 130px;
+	margin-bottom: 4rem;
+
+	#title{
+		padding-top: 6rem;
+		text-transform: uppercase;
+		text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+	}
+
+	h1{
+		text-align: center;
+		color: $white;
+		font-size: 3rem;
+		font-weight: 300;
+		margin: 0;
+		padding-bottom: 4rem;
+	}
+}
+
+
+#events{
+	padding-bottom: 3rem;
+	ul{
+		list-style: none;
+		padding-left: none;
+		margin: 0;
+		li{
+			width: 23%;
+			float: left;
+			margin: 0 1% 2rem 1%;
+			-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
+			box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
+			border-radius: 0.35rem;
+			img{
+				width: 100%;
+				max-width: 100%;
+				border-radius: 0.35rem 0.35rem 0 0;
+			}
+			.event_desc{
+				padding: 1rem 7.5%;
+				h2{
+					margin: 0;
+					font-size: 1rem;
+					font-weight: 700;
+					color: $dark;
+				}
+				.data_evento{
+					color: lighten($dark, 50%);
+					font-size: 0.9rem;
+					margin: 0.5rem 0 0.25rem 0
+				}
+			}
+			&:hover{
+				img{
+					opacity: 0.8;
+				}
+				.event_desc{
+					h2{
+						color: $highlight;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) and (min-width: 320px) {
+	
+	
+	
+	#events ul li {
+		width: 100%;
+		font-size: 3em;
+		p{
+		font-size: 3em;
+		}
+	}
+}
