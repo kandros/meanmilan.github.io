@@ -1,4 +1,9 @@
 jQuery(document).ready(function($){
+
+	$("#menu-button").on("click", function(){
+		$("#main_header nav").toggle();
+	});
+
 	var animating = false;
 
 
